@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Árvore - Visualização</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <h1>Árvore Binária</h1>
+
+    {% if mensagem %}
+      <p class="mensagem">{{ mensagem }}</p>
+    {% endif %}
+
+    <div class="controls">
+      <form action="{% url 'acao' %}" method="post" class="inline-form">
+        {% csrf_token %}
+        <input type="number" name="valor" placeholder="valor" required>
+        <select name="tipo">
+          <option value="inserir">Inserir</option>
+          <option value="remover">Remover</option>
+          <option value="buscar">Buscar</option>
+        </select>
+        <button class="btn" type="submit">Executar</button>
+      </form>
+
+      <form action="{% url 'index' %}" method="get" style="display:inline-block; margin-left:12px;">
+        <button class="btn secondary">Nova árvore</button>
+      </form>
+    </div>
+
+    <div class="svg-wrap">
+      {% if svg.nodes %}
+        <svg width="100%" height="{{ svg.height }}" viewBox="0 0 {{ svg.width }} {{ svg.height }}" preserveAspectRatio="xMidYTop">
+          <!-- linhas (arestas) -->
+          {% for e in svg.edges %}
+            {% with from_node=svg.nodes|dictsort:"id"|first %}
+            {% endwith %}
+          {% endfor %}
+
+          {% comment %} We'll map node id -> position in JS or template. Build a dictionary for fast lookup {% endcomment %}
+
+          {% for edge in svg.edges %}
+            {% comment %} find the positions of from and to via loops (small lists, acceptable) {% endcomment %}
+            {% for n_from in svg.nodes %}
+              {% if n_from.id == edge.from %}
+                {% for n_to in svg.nodes %}
+                  {% if n_to.id == edge.to %}
+                    <line x1="{{ n_from.x }}" y1="{{ n_from.y }}" x2="{{ n_to.x }}" y2="{{ n_to.y }}" class="edge"/>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+          {% for node in svg.nodes %}
+            <g class="node-group">
+              <circle cx="{{ node.x }}" cy="{{ node.y }}" r="22" class="node-circle"/>
+              <text x="{{ node.x }}" y="{{ node.y }}" class="node-text">{{ node.valor }}</text>
+            </g>
+          {% endfor %}
+        </svg>
+      {% else %}
+        <p>Nenhuma árvore gerada ainda.</p>
+      {% endif %}
+    </div>
+
+  </div>
+</body>
+</html>

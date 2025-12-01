@@ -1,0 +1,96 @@
+:root{
+  --bg: #0f1720;
+  --card: #0b1220;
+  --accent: #00bcd4;
+  --text: #e6eef5;
+  --muted: #9aa9b3;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #071021, #0f1720);
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+h1{ margin-top: 0; }
+
+textarea{
+  width: 100%;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  resize: vertical;
+}
+
+.btn{
+  background: var(--accent);
+  color: #001b20;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.secondary{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+.controls{
+  margin-bottom: 12px;
+}
+
+.inline-form input[type="number"],
+.inline-form select{
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 6px;
+}
+
+.svg-wrap{
+  margin-top: 18px;
+  overflow-x: auto;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border-radius: 6px;
+}
+
+/* SVG styling */
+.edge{
+  stroke: rgba(255,255,255,0.25);
+  stroke-width: 2;
+}
+
+.node-circle{
+  fill: var(--accent);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.node-text{
+  fill: #001b20;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 14px;
+}
+
+.erro{ color: #ff6666; font-weight:bold; }
+.mensagem{ color: #a3ff9a; font-weight:bold; }
