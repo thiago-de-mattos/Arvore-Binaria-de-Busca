@@ -36,8 +36,11 @@ HTML5 + CSS3	Interface e layout
 SVG	Renderização gráfica da árvore
 Matplotlib (opcional)	Ferramentas gráficas
 NetworkX (opcional)	Manipulação de grafos
+
 🚀 Como Executar o Projeto
+
 ✔️ 1. Clonar o repositório
+
 git clone https://github.com/thiago-de-mattos/Arvore-Binaria-de-Busca.git
 cd Arvore-Binaria-de-Busca
 
