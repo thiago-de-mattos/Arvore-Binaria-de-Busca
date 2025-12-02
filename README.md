@@ -36,7 +36,7 @@ Matplotlib (opcional)	Ferramentas gráficas (não obrigatório)
 NetworkX (opcional)	Manipulação de grafos (não obrigatório)
 🚀 Como Executar o Projeto
 ✔️ 1. Clonar o repositório
-git clone https://github.com/SEU_USUARIO/Arvore-Binaria-de-Busca.git
+git clone https://github.com/thiago-de-mattos/Arvore-Binaria-de-Busca.git
 cd Arvore-Binaria-de-Busca
 
 ✔️ 2. Criar e ativar o ambiente virtual
@@ -45,14 +45,10 @@ python -m venv venv
 venv\Scripts\activate
 
 Linux/Mac:
-python3 -m venv venv
+python3 -m venv .venv
 source venv/bin/activate
 
 ✔️ 3. Instalar dependências
-pip install django matplotlib networkx
-
-
-Ou caso use requirements.txt:
 
 pip install -r requirements.txt
 
@@ -61,7 +57,6 @@ python manage.py migrate
 
 ✔️ 5. Rodar o servidor
 python manage.py runserver
-
 
 Acesse:
 
@@ -127,8 +122,6 @@ Pesquisar valor específico
 
 Ver mensagens de feedback (encontrado, removido, inexistente etc.)
 
-O CSS aplica um estilo limpo, legível e organizado para apresentação acadêmica.
-
 🧪 Testes
 
 O projeto utiliza:
@@ -152,11 +145,3 @@ Disciplina: Estrutura de Dados
 
 Este projeto é destinado ao uso acadêmico e demonstração do aprendizado.
 Sua reprodução é permitida para fins educacionais.
-
-📝 Se quiser, posso gerar também:
-
-✔️ requirements.txt
-✔️ badge de versão
-✔️ GIF demonstrando a aplicação (se você enviar print)
-✔️ Desenho em ASCII da árvore no README
-✔️ Versão resumida para entrega no SIGAA/AVA
