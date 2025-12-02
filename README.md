@@ -49,21 +49,26 @@ cd Arvore-Binaria-de-Busca
 Windows
 
 python -m venv venv
+
 venv\Scripts\activate
 
 
 Linux/Mac
 
 python3 -m venv venv
+
 source venv/bin/activate
 
 ✔️ 3. Instalar dependências
+
 pip install -r requirements.txt
 
 ✔️ 4. Realizar migrações
+
 python manage.py migrate
 
 ✔️ 5. Rodar o servidor
+
 python manage.py runserver
 
 
