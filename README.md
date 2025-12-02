@@ -75,6 +75,12 @@ python manage.py runserver
 Acesse no navegador:
 👉 http://127.0.0.1:8000/
 
+no link aperte ctrl + c
+
+o mesmo para parar servidor aperte no terminal
+
+crtl + c
+
 🧬 Arquitetura do Projeto
 arvore_binaria/
 │── arvore.py            # Classe principal da árvore binária de busca
