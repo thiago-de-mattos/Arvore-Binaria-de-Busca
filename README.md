@@ -35,6 +35,7 @@ SVG	Renderização da árvore binária
 Matplotlib (opcional)	Ferramentas gráficas (não obrigatório)
 NetworkX (opcional)	Manipulação de grafos (não obrigatório)
 🚀 Como Executar o Projeto
+
 ✔️ 1. Clonar o repositório
 git clone https://github.com/thiago-de-mattos/Arvore-Binaria-de-Busca.git
 cd Arvore-Binaria-de-Busca
