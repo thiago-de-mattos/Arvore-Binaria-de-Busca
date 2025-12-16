@@ -1,90 +1,51 @@
-🌳 Árvore Binária de Busca – Projeto Acadêmico com Django
+# 🌳 Árvore Binária de Busca (ABB) com Django
 
-Este projeto foi desenvolvido como parte da disciplina de Estrutura de Dados, utilizando conceitos de Árvore Binária de Busca (ABB) aplicados dentro de uma aplicação web construída com Django.
+Projeto acadêmico desenvolvido para a disciplina de **Estrutura de Dados**, com o objetivo de aplicar e visualizar na prática os conceitos de **Árvore Binária de Busca (ABB)** em uma aplicação web construída com **Django**.
 
-O sistema recebe uma lista de números enviada pelo usuário, gera dinamicamente uma Árvore Binária de Busca e exibe sua estrutura visual utilizando SVG, sem necessidade de imagens externas.
+A aplicação permite que o usuário insira, remova e busque valores em uma árvore binária, com **renderização visual dinâmica em SVG**, sem uso de imagens externas.
 
-O usuário pode realizar:
+---
 
-✔ Inserção de valores
+## 🎯 Funcionalidades
 
-✔ Remoção de valores
+* Inserção de valores na árvore
+* Remoção de valores mantendo a estrutura válida da ABB
+* Busca de elementos
+* Renderização visual automática da árvore após cada operação
+* Feedback ao usuário (valor encontrado, não encontrado, removido, duplicado, etc.)
 
-✔ Busca de elementos
+---
 
-A cada operação, a árvore é reconstruída e renderizada novamente, permitindo compreender visualmente o funcionamento de uma ABB.
+## 📘 Objetivos do Projeto
 
-📘 Objetivos do Projeto
+* Aplicar conceitos fundamentais de Estruturas de Dados
+* Demonstrar entendimento prático de Árvores Binárias de Busca
+* Gerar uma visualização clara e didática da ABB
+* Integrar Python + Django em um sistema funcional
+* Permitir manipulação da árvore em tempo real
+* Desenvolver uma interface simples, limpa e intuitiva
 
-Aplicar conceitos fundamentais de estruturas de dados
+---
 
-Demonstrar entendimento da árvore binária de busca
+## 🛠️ Tecnologias Utilizadas
 
-Gerar uma visualização dinâmica da árvore
+| Tecnologia            | Função                         |
+| --------------------- | ------------------------------ |
+| Python 3.12+          | Lógica da árvore e backend     |
+| Django 5.2            | Framework web                  |
+| HTML5 + CSS3          | Interface e layout             |
+| SVG                   | Renderização gráfica da árvore |
+| Matplotlib (opcional) | Ferramentas gráficas           |
+| NetworkX (opcional)   | Manipulação de grafos          |
 
-Integrar Python + Django em um sistema funcional
+---
 
-Permitir manipulação da árvore em tempo real
+## 📂 Estrutura do Projeto
 
-Apresentar interface simples, limpa e intuitiva
-
-🛠️ Tecnologias Utilizadas
-Tecnologia	Função
-Python 3.12+	Lógica da árvore e backend
-Django 5.2	Framework web
-HTML5 + CSS3	Interface e layout
-SVG	Renderização gráfica da árvore
-Matplotlib (opcional)	Ferramentas gráficas
-NetworkX (opcional)	Manipulação de grafos
-
-🚀 Como Executar o Projeto
-
-✔️ 1. Clonar o repositório
-
-git clone https://github.com/thiago-de-mattos/Arvore-Binaria-de-Busca.git
-cd Arvore-Binaria-de-Busca
-
-✔️ 2. Criar e ativar o ambiente virtual
-
-Windows
-
-python -m venv venv
-
-venv\Scripts\activate
-
-
-Linux/Mac
-
-python3 -m venv venv
-
-source venv/bin/activate
-
-✔️ 3. Instalar dependências
-
-pip install -r requirements.txt
-
-✔️ 4. Realizar migrações
-
-python manage.py migrate
-
-✔️ 5. Rodar o servidor
-
-python manage.py runserver
-
-
-Acesse no navegador:
-👉 http://127.0.0.1:8000/
-
-no link aperte ctrl + c
-
-o mesmo para parar servidor aperte no terminal
-
-crtl + c
-
-🧬 Arquitetura do Projeto
+```
 arvore_binaria/
-│── arvore.py            # Classe principal da árvore binária de busca
-│── views.py             # Rotas e lógica das requisições
+│── arvore.py            # Classe principal da Árvore Binária de Busca
+│── views.py             # Lógica das requisições e controle da árvore
 │── urls.py              # Mapeamento de URLs
 │── templates/
 │   ├── index.html       # Página inicial
@@ -92,75 +53,132 @@ arvore_binaria/
 │── static/
 │   └── css/style.css    # Estilos da interface
 │── migrations/          # Migrations do Django
-requirements.txt
-manage.py
+│
+├── requirements.txt     # Dependências do projeto
+└── manage.py            # Comando principal do Django
+```
 
-📊 Funcionamento da Árvore Binária
+---
 
-A classe Arvore implementa:
+## 🚀 Como Executar o Projeto
 
-✔ Inserção (insert)
+### 1️⃣ Clonar o repositório
+
+```bash
+git clone https://github.com/thiago-de-mattos/Arvore-Binaria-de-Busca.git
+cd Arvore-Binaria-de-Busca
+```
+
+### 2️⃣ Criar e ativar o ambiente virtual
+
+**Windows**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3️⃣ Instalar as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Executar migrações
+
+```bash
+python manage.py migrate
+```
+
+### 5️⃣ Rodar o servidor
+
+```bash
+python manage.py runserver
+```
+
+Acesse no navegador:
+👉 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+Para **parar o servidor**, utilize:
+
+```bash
+Ctrl + C
+```
+
+---
+
+## 🧬 Funcionamento da Árvore Binária
+
+A classe `Arvore` implementa:
+
+### ✔ Inserção (`insert`)
 
 Insere valores respeitando as regras da ABB.
 
-✔ Busca (search)
+### ✔ Busca (`search`)
 
-Procura elementos de forma recursiva.
+Realiza a busca de elementos de forma recursiva.
 
-✔ Remoção (delete)
+### ✔ Remoção (`delete`)
 
 Remove valores mantendo a estrutura válida da árvore.
 
-✔ Conversão para coordenadas
+### ✔ Conversão para coordenadas
 
-Gera posições organizadas para cada nó ser exibido no SVG.
+Calcula posições organizadas para cada nó ser exibido corretamente no SVG.
 
-✔ Renderização
+### ✔ Renderização
 
-Linhas = arestas
+* Linhas: arestas da árvore
+* Círculos: nós
+* Texto centralizado: valores
 
-Círculos = nós
+Toda a renderização é feita manualmente, sem dependência de bibliotecas gráficas externas.
 
-Texto centralizado = valor
+---
 
-Tudo implementado manualmente, sem dependência de bibliotecas externas de gráficos.
+## 🎨 Interface do Usuário
 
-🎨 Interface do Usuário
+A interface permite:
 
-Na interface é possível:
+* Inserir uma lista inicial de valores
+* Visualizar a árvore binária em tempo real
+* Inserir novos elementos
+* Remover elementos existentes
+* Buscar valores específicos
+* Receber mensagens de feedback sobre cada operação
 
-Inserir lista inicial de valores
+---
 
-Visualizar a árvore binária
-
-Inserir novos elementos
-
-Remover elementos existentes
-
-Pesquisar um valor
-
-Receber feedback (achado, não encontrado, removido, duplicado etc.)
-
-🧪 Testes
+## 🧪 Testes
 
 O projeto utiliza:
 
-Testes manuais
+* Testes manuais
+* Logs e mensagens de depuração
+* Conferência visual da árvore renderizada
 
-Logs e mensagens de depuração
+Opcionalmente, podem ser adicionados testes unitários com `pytest` ou `unittest`.
 
-Conferência visual da árvore renderizada
+---
 
-Se desejado, podem ser criados testes unitários com pytest ou unittest.
+## 👨‍🎓 Autor
 
-👨‍🎓 Autor
-
-Thiago de Mattos Azevedo Chaves
+**Thiago de Mattos Azevedo Chaves**
 Universidade de Vassouras – Campus Maricá
 Curso: Engenharia de Software
 Disciplina: Estrutura de Dados
 
-📄 Licença
+---
 
-Este projeto é destinado ao uso acadêmico e demonstração do aprendizado.
+## 📄 Licença
+
+Projeto destinado ao **uso acadêmico e demonstração de aprendizado**.
 Reprodução permitida para fins educacionais.
